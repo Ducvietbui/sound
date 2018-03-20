@@ -28,4 +28,13 @@ void dispWAVHeader(char filename[]){
 	printf("  subchunk 1 ID: ");
 	printID(mh.subchunk1ID);
 	printf("  subchunk 1 size: %d\n", mh.subchunk1Size);
+	printf("Audio format: %d\n", mh.audioFormat);
+	printf("Number of channels: %d\n", mh.numChannels);
+	printf("Sample rate: %d\n", mh.sampleRate);
+	printf("Byte rate: %d\n", mh.byteRate);
+	printf("Block align: %d\n", mh.blockAlign);
+	printf("Bits per sample: %d\n", mh.bitsPerSample);
+	printf("  subchunk 2 ID: ");
+	printID(mh.subchunk2ID);
+	printf("  subchunk 2 size: %d\n", mh.subchunk2Size);
 }

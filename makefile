@@ -3,7 +3,7 @@ APPNAME = sound.a
 
 #link rule
 $(APPNAME) : $(OBJ)
-	gcc -o $(APPNAME) $(OBJ)
+	gcc -o $(APPNAME) $(OBJ) -lm
 #conpiling rule
 %.o : %.c
 	gcc -c -o $@ $<

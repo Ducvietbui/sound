@@ -2,15 +2,38 @@
 #include <stdio.h>
 #include <math.h>
 //function definition of printfID;
-void printID(char id[]){
+void	printID(char id[]){
 	int i;
 	for(i=0; i<4; i++);
 		printf("%c", id[i]);
 
 	printf("\n");
 }
+//function definition of dispWAVData()
+void	dispWAVData(char filename[]){
+	int i,j;
+	FILE *fp;
+	double rms[80], sum;
+	short samples[SAMPLERATE];
+	WAVHeader mh;
+	fp = fopen(filename, "r");
+	if(fp == NULL){
+		printf("Error when open the file!\n");
+		return;
+	}
+	fread(&mh, sizeof(mh),1 , fp);
+	fread(samples, sizeof(short), SAMPLERATE, fp);
+	fclose(fp);
+	for(i=0; i<80; i++){
+		for(j=0, sum=0.0; j<SAMPLERATE/80; ++j){
+			sum += samples[j+i*200] * samples[j+i*200];
+		}
+		rms[i] = sqrt(sum/200);
+		printf("rms[%d]: %10.4f\n", i, rms[i]);
+	}
+}
 //function definition of dispWAVHeader()
-void dispWAVHeader(char filename[]){
+void	dispWAVHeader(char filename[]){
 	FILE *fp;
 	WAVHeader mh;
 	fp = fopen(filename, "r");

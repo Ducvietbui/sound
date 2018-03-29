@@ -1,3 +1,4 @@
+//#define DEBUG //conditional compiling
 //contant definition
 #define SAMPLERATE 16000
 

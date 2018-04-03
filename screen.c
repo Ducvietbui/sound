@@ -24,6 +24,10 @@ void 	dispBar(int col, double dB){
 	int i;
 	for(i=0; i <dB/3; i++){
 		gotoxy(30-i, col+1);
+#ifndef UNICODE		//if unicode is not enabled
 		printf("%c", '*');
-	}
-}
+#else
+		printf("%s", BAR);
+#endif
+	}	//end of for
+}	//end of function

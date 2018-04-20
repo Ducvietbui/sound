@@ -36,7 +36,7 @@ List of Contents
 	  5. makefile: This file combines all the source codes in *.c *.h.  
 	  6. sound.php:  Store to the server to process the data received and print to the file "sound_log.txt" .
 5.Copyright and licensing information
-	  1. Raspberry Pi Foundation UK Registered Charity 1129409
+	  1. Raspberry Pi Foundation
 	  2. Transcend Information Inc.
 	  3. Source codes Copyright by Viet Bui ( student number: e1700690 ), assisted by Dr. Gao Chao
 6.Contact information for the programmer
